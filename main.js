@@ -43,7 +43,7 @@ function renderTodoItem(text, completed = false) {
     const toDoListItemSpan = document.createElement('SPAN'); 
     toDoListItemSpan.classList.add('todo-item__description')
 
-    toDoListItemSpan.textContent = text; // saves text from input in span
+    toDoListItemSpan.textContent = text;
     toDoListItem.appendChild(toDoListItemSpan);
 
     // create button
@@ -52,7 +52,7 @@ function renderTodoItem(text, completed = false) {
     toDoListItemDelBtn.textContent = 'Видалити';
     toDoListItem.appendChild(toDoListItemDelBtn);
 
-    toDoList.prepend(toDoListItem);
+    toDoList.appendChild(toDoListItem);
 }
 
 // loads elements
@@ -85,7 +85,7 @@ toDoList.addEventListener('click', ({ target }) => {
             const index = Array.from(toDoList.children).indexOf(listItem);
 
             const todos = loadTodos();
-            todos.splice(index, 1); //выбирает один элемент и удаляет
+            todos.splice(index, 1); //выбирает один элемент и удаляет из загрузки
             saveTodos(todos);
 
             listItem.remove();
