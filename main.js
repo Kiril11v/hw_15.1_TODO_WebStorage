@@ -71,7 +71,7 @@ FormAddBtn.addEventListener('click', (event) => {
         renderTodoItem(inputValue);
 
         const todos = loadTodos();
-        todos.unshift({ text: inputValue, completed: false}); // загружает задачу в самый вверх 
+        todos.push({ text: inputValue, completed: false});
         saveTodos(todos);
 
         formInput.value = '';
